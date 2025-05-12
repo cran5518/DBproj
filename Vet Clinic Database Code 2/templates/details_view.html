@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ id_type|capitalize }} Details: {{ id_value }}</title>
+    <style>
+        .top-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px; /* adjust as needed */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            width: 200px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+    <div class="top-button-container">
+        <form action="{{ url_for('home') }}" method="get">
+            <button type="submit">Home</button>
+          </form>
+    </div>
+    
     <h1>{{ id_type|capitalize }} ID: {{ id_value }}</h1>
 
 
@@ -126,7 +157,7 @@
     {# ... Veterinarians Table ... #}
         <h2>Veterinarians</h2>
         <table border="1">
-            <tr><th>ID</th><th>Name</th><th>Specialty</th></tr>
+            <tr><th>ID</th><th>Name</th><th>Clinic</th></tr>
             {% for vet in veterinarians %}
                 {% if vet.vetID == id_value %}
                     <tr><td>{{ vet.vetID }}</td><td>{{ vet.vetName }}</td><td>{{ vet.clinicID }}</td></tr>
@@ -162,7 +193,7 @@
     {# ... Veterinarians Table ... #}
         <h2>Veterinarians</h2>
         <table border="1">
-            <tr><th>ID</th><th>Name</th><th>Specialty</th></tr>
+            <tr><th>ID</th><th>Name</th><th>Clinic</th></tr>
             {% for vet in veterinarians %}
                 {% if vet.clinicID == id_value %}
                     <tr><td>{{ vet.vetID }}</td><td>{{ vet.vetName }}</td><td>{{ vet.clinicID }}</td></tr>
