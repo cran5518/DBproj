@@ -152,7 +152,7 @@
     {# ... Clinics Table ... #}
         <h2>Clinics</h2>
         <table border="1">
-            <tr><th>ID</th><th>Name</th><th>Location</th><th>Company ID</th></tr>
+            <tr><th>ID</th><th>Name</th><th>Address</th><th>Company ID</th></tr>
             {% for clinic in clinics %}
                 {% if clinic.clinicID == id_value %}
                     <tr><td>{{ clinic.clinicID }}</td><td>{{ clinic.clinicName }}</td><td>{{ clinic.clinicAddress }}</td><td>{{ clinic.companyID }}</td></tr>
@@ -233,10 +233,10 @@
     {# ... Clinics Table ... #}
         <h2>Clinics</h2>
         <table border="1">
-            <tr><th>ID</th><th>Name</th><th>Location</th><th>Company ID</th></tr>
+            <tr><th>ID</th><th>Name</th><th>Address</th><th>Company ID</th></tr>
             {% for clinic in clinics %}
                 {% if clinic.companyID == id_value %}
-                    <tr><td>{{ clinic.clinicID }}</td><td>{{ clinic.clinicName }}</td><td>{{ clinic.clinicLocation }}</td><td>{{ clinic.companyID }}</td></tr>
+                    <tr><td>{{ clinic.clinicID }}</td><td>{{ clinic.clinicName }}</td><td>{{ clinic.clinicAddress }}</td><td>{{ clinic.companyID }}</td></tr>
                 {% endif %}
             {% endfor %}
         </table>
